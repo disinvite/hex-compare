@@ -1,5 +1,5 @@
 import React from 'react';
-import HexView from './HexView';
+import DataView from './DataView';
 import './App.css';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1>hello</h1>
-      <HexView data={bytes} />
+      <DataView data={bytes} />
     </div>
   );
 }

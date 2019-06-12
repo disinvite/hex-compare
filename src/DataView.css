@@ -1,0 +1,29 @@
+.HexView, .AsciiView {
+  font-family: monospace;
+}
+
+.HexView {
+  float: left;
+  color: #abe1fd;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.HexView td.hover {
+  backgroud-color: #717171;
+}
+
+.AsciiView {
+  float: left;
+  color: #adddcf;
+}
+
+/*
+.color1 { color: #abe1fd; }
+.color2 { color: #fed1be; }
+.color3 { color: #f0e0a2; }
+.color4 { color: #adddcf; }
+*/

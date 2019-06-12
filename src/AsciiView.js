@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-function byteToHexStr(byte) {
-  return byte
-    .charCodeAt(0)
-    .toString(16)
-    .padStart(2, '0')
-    .toUpperCase();
-}
-
 function base64ToArray(arg) {
   return Buffer
     .from(arg, 'base64')
     .toString()
-    .split('')
-    .map(byteToHexStr);
+    .replace(/[^ -~]/g, '.')
+    .split('');
 }
 
 function chunkArray(arr, size) {
@@ -27,7 +19,7 @@ function chunkArray(arr, size) {
   return results;
 }
 
-class HexView extends Component {
+class AsciiView extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -50,15 +42,15 @@ class HexView extends Component {
     });
 
     return (
-      <table className="HexView">
+      <table className="AsciiView">
         <tbody>{rows}</tbody>
       </table>
     );
   }
 }
 
-HexView.propTypes = {
+AsciiView.propTypes = {
   data: PropTypes.string.isRequired,
 };
 
-export default HexView;
+export default AsciiView;
